@@ -9,7 +9,7 @@ const SignIn = ({ onSignIn }) => {
     const navigate = useNavigate();
 
     const signIn = async () => {
-
+        console.log("need to set up sign in");
     };
 
     //add Auth.signUp
