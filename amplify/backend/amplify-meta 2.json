@@ -1,0 +1,110 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-craigslistlist-dev-80029-authRole",
+      "UnauthRoleArn": "arn:aws:iam::183999104824:role/amplify-craigslistlist-dev-80029-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::183999104824:role/amplify-craigslistlist-dev-80029-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-craigslistlist-dev-80029-deployment",
+      "UnauthRoleName": "amplify-craigslistlist-dev-80029-unauthRole",
+      "StackName": "amplify-craigslistlist-dev-80029",
+      "StackId": "arn:aws:cloudformation:us-east-1:183999104824:stack/amplify-craigslistlist-dev-80029/2e99b2a0-c6f3-11ec-9e3d-0a6fc4855f79",
+      "AmplifyAppId": "d2gksrjxbktrxh"
+    }
+  },
+  "auth": {
+    "craigslistlistaa3c3ec5": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-craigslistlist-dev-80029-deployment/amplify-cfn-templates/auth/craigslistlistaa3c3ec5-cloudformation-template.json",
+        "logicalId": "authcraigslistlistaa3c3ec5"
+      },
+      "lastPushTimeStamp": "2022-04-28T18:52:44.147Z",
+      "output": {
+        "CreatedSNSRole": "arn:aws:iam::183999104824:role/snsaa3c3ec580029-dev",
+        "UserPoolId": "us-east-1_QWRk6fOfb",
+        "AppClientIDWeb": "66esombi0s8ckkeo702e3nhgpp",
+        "AppClientID": "618krnnqilpiohm5k0fggtcdee",
+        "IdentityPoolId": "us-east-1:b878c7c4-2069-49c2-a936-0ec7bd3edc6c",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:183999104824:userpool/us-east-1_QWRk6fOfb",
+        "IdentityPoolName": "craigslistlistaa3c3ec5_identitypool_aa3c3ec5__dev",
+        "UserPoolName": "craigslistlistaa3c3ec5_userpool_aa3c3ec5"
+      },
+      "lastPushDirHash": "dLafZjIL2wdezO9cTirIAcbtSA8="
+    }
+  },
+  "api": {
+    "craigslistListAPI": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "craigslistlistaa3c3ec5",
+          "attributes": [
+            "UserPoolId"
+          ]
+        }
+      ],
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authcraigslistlistaa3c3ec5"
+            }
+          },
+          "additionalAuthenticationProviders": []
+        },
+        "GraphQLAPIIdOutput": "xjhyxtuvxbbd7hz7c222juwd2i",
+        "GraphQLAPIEndpointOutput": "https://zqtdond4g5hwdhz3kpcckru4eu.appsync-api.us-east-1.amazonaws.com/graphql"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-craigslistlist-dev-80029-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apicraigslistListAPI"
+      },
+      "lastPushTimeStamp": "2022-04-28T18:52:44.148Z",
+      "lastPushDirHash": "yofNiV892nEiNdSt6OU3ZQxH018="
+    }
+  },
+  "storage": {
+    "craigslistListImageStorage": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "lastPushTimeStamp": "2022-04-28T18:52:45.224Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-craigslistlist-dev-80029-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
+        "logicalId": "storagecraigslistListImageStorage"
+      },
+      "output": {
+        "BucketName": "cl-image-storage80029-dev",
+        "Region": "us-east-1"
+      },
+      "lastPushDirHash": "kCEKwWVvoS57tkZ1m1WPY/pba4s="
+    }
+  }
+}

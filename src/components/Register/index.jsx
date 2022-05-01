@@ -1,5 +1,6 @@
 //@ts-check
 import React, { useState } from 'react';
+import { Auth } from 'aws-amplify';
 import { useNavigate } from 'react-router-dom';
 
 const SignIn = ({ onSignIn }) => {
@@ -8,8 +9,16 @@ const SignIn = ({ onSignIn }) => {
     const navigate = useNavigate();
 
     const register = async () => {
-        console.log("need to setup registration!");
-
+        try {
+            const { user } = await Auth.signUp({
+                username,
+                password,
+            });
+            console.log(user);
+            navigate('/signin');
+        } catch (error) {
+            console.log('error signing up', error);
+        }
     };
 
     //add Auth.signUp

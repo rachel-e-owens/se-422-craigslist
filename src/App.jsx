@@ -46,6 +46,9 @@ import Community from './sections/Community';
 
 Amplify.configure(awsconfig);
 
+// >>New - Configuring Auth Module
+Auth.configure(awsconfig);
+
 function App() {
 
   const [loggedIn, setLoggedIn] = useState(true);
@@ -56,15 +59,15 @@ function App() {
   }, []); 
 
   const getUser = () => {
-   /* Auth.currentUserInfo().then((userInfo) => {
+    Auth.currentUserInfo().then((userInfo) => {
       var authUser = userInfo;
       console.log(authUser.username);
       setUsername(authUser.username);
-    })*/
+    })
   }
 
   const checkIfLoggedIn = () => {
-  /*  Auth.currentAuthenticatedUser().then(() => {
+    Auth.currentAuthenticatedUser().then(() => {
       console.log('logged in');
       setLoggedIn(true);
       getUser();
@@ -73,20 +76,23 @@ function App() {
     .catch(() => {
       console.log('not logged in');
       setLoggedIn(false);
-    });*/
+    });
   };
 
 
   const signOut = async () => {
-  /*  try {
+    try {
       await Auth.signOut();
       setLoggedIn(false);
       setUsername("guest");
     } catch (error) {
         console.log('error signing out: ', error);
-    }*/
+    }
   };
 
+  const goHome = async () => {
+
+  };
 
   const onSignIn = () => {
     setLoggedIn(true);

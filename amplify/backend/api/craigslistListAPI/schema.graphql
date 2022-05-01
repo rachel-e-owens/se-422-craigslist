@@ -1,0 +1,355 @@
+# FOR TESTING ONLY -> REMOVE AFTER APP LAUNCHES
+type Note @model {
+  id: ID!
+  name: String!
+  description: String
+  image: String
+}
+
+# SECTIONS ########################################################################
+
+type ForSale @model {
+  id: ID!
+  type: String! #this would be cars&trucks, motorcycles, etc
+}
+type Housing @model {
+  id: ID!
+  type: String!
+}
+
+type Services @model {
+  id: ID!
+  type: String!
+}
+
+type Jobs @model {
+  id: ID!
+  type: String!
+}
+
+type Community @model {
+  id: ID!
+  type: String!
+}
+
+# CATEGORIES ########################################################################
+
+# FOR SALE #
+
+type CarsTrucks @model {
+  id: ID!
+  build_year: Int!
+  make_model: String!
+  color: String!
+  type: String!
+  condition: String!
+  price: Int!
+  city: String!
+  phone: Int!
+  image: String
+}
+
+type Motorcycles @model {
+  id: ID!
+  build_year: Int!
+  make_model: String!
+  color: String!
+  type: String!
+  condition: String!
+  price: Int!
+  city: String!
+  phone: Int!
+  image: String
+}
+
+type Boats @model {
+  id: ID!
+  build_year: Int!
+  make_manufacturer: String!
+  enginge_hours: Int!
+  length: Int!
+  model_name: String!
+  model_number: Int!
+  propulsion_type: String!
+  condition: String!
+  price: Int!
+  city: String!
+  phone: Int!
+  image: String
+}
+
+type Books @model {
+  id: ID!
+  year_written: Int!
+  title: String!
+  author: String!
+  condition: String!
+  dimension_width: Int # not required
+  dimension_height: Int
+  dimension_length: Int
+  price: Int!
+  city: String!
+  phone: Int!
+  image: String
+}
+
+type Furniture @model {
+  id: ID!
+  make_manufacturer: String!
+  name: String!
+  dimension_width: Int # not required
+  dimension_height: Int
+  dimension_length: Int
+  condition: String!
+  price: Int!
+  city: String!
+  phone: Int!
+  image: String
+}
+
+# HOUSING #
+
+type AptHousing @model {
+  id: ID!
+  housing_type: String!
+  Laundry: Boolean!
+  Parking: Boolean!
+  animals: Boolean!
+  handicap_accessible: Boolean!
+  num_bedrooms: Int!
+  num_bathrooms: Int!
+  flooring: String!
+  sqft: Int!
+  availability: String!
+  rent: Int!
+  city: String!
+  phone: Int!
+  image: String
+}
+
+type Commercial @model {
+  id: ID!
+  sqft: Int!
+  handicap_accessible: Boolean!
+  rent: Int!
+  city: String!
+  phone: Int!
+  image: String
+}
+
+type StorageParking @model {
+  id: ID!
+  type: String!
+  handicap_accessible: Boolean!
+  rent: Int!
+  city: String!
+  phone: Int!
+  image: String
+}
+
+type Sublet @model {
+  id: ID!
+  housing_type: String!
+  private_room: Boolean!
+  private_bath: Boolean!
+  laundry: Boolean!
+  parking: Boolean!
+  handicap_accessible: Boolean!
+  animals: Boolean!
+  num_bedrooms: Int!
+  num_bathrooms: Int!
+  flooring: String!
+  sqft: Int!
+  rent_period: String!
+  rent: Int!
+  city: String!
+  phone: Int!
+  image: String
+}
+
+type VacationRental @model {
+  id: ID!
+  housing_type: String!
+  laundry: Boolean!
+  parking: Boolean!
+  handicap_accessible: Boolean!
+  animals: Boolean!
+  num_bedrooms: Int!
+  num_bathrooms: Int!
+  flooring: String!
+  sqft: Int!
+  availability: String!
+  rent_period: String!
+  rent: Int!
+  city: String!
+  phone: Int!
+  image: String
+}
+
+# SERVICES #
+
+type Automotive @model {
+  id: ID!
+  posting_title: String!
+  location: String!
+  city: String!
+  phone: Int!
+  image: String
+}
+
+type Beauty @model {
+  id: ID!
+  posting_title: String!
+  type: String!
+  location: String!
+  city: String!
+  phone: Int!
+  image: String
+}
+
+type LaborMoving @model {
+  id: ID!
+  posting_title: String!
+  type: String!
+  location: String!
+  city: String!
+  phone: Int!
+  image: String
+}
+
+type Computer @model {
+  id: ID!
+  posting_title: String!
+  location: String!
+  city: String!
+  phone: Int!
+  image: String
+}
+
+type Household @model {
+  id: ID!
+  posting_title: String!
+  type: String!
+  location: String!
+  city: String!
+  phone: Int!
+  image: String
+}
+
+# JOBS #
+
+type Finance @model {
+  id: ID!
+  job_title: String!
+  job_seeker: Boolean!
+  job_poster: Boolean!
+  compensation: Int!
+  job_type: String!
+  city: String!
+  phone: Int!
+  image: String
+}
+
+type Software @model {
+  id: ID!
+  job_title: String!
+  job_seeker: Boolean!
+  job_poster: Boolean!
+  compensation: Int!
+  job_type: String!
+  city: String!
+  phone: Int!
+  image: String
+}
+
+type CustomerService @model {
+  id: ID!
+  job_title: String!
+  job_seeker: Boolean!
+  job_poster: Boolean!
+  compensation: Int!
+  job_type: String!
+  city: String!
+  phone: Int!
+  image: String
+}
+
+type RealEstate @model {
+  id: ID!
+  job_title: String!
+  job_seeker: Boolean!
+  job_poster: Boolean!
+  compensation: Int!
+  job_type: String!
+  city: String!
+  phone: Int!
+  image: String
+}
+
+type Legal @model {
+  id: ID!
+  job_title: String!
+  job_seeker: Boolean!
+  job_poster: Boolean!
+  compensation: Int!
+  job_type: String!
+  city: String!
+  phone: Int!
+  image: String
+}
+
+# COMMUNITY #
+
+type Pets @model {
+  id: ID!
+  posting_title: String!
+  animal_type: String!
+  animal_breed: String
+  city: String!
+  phone: Int!
+  image: String
+}
+
+type Childcare @model {
+  id: ID!
+  posting_title: String!
+  private: Boolean!
+  group: Boolean!
+  available_hours: String!
+  age_range: [Int!]
+  pay_rate: Int!
+  city: String!
+  phone: Int!
+  image: String
+}
+
+type Volunteers @model {
+  id: ID!
+  posting_title: String!
+  event_type: String!
+  date: String!
+  hours: String!
+  city: String!
+  phone: Int!
+  image: String
+}
+
+type LostFound @model {
+  id: ID!
+  posting_title: String!
+  lost: Boolean!
+  found: Boolean!
+  city: String!
+  phone: Int!
+  image: String
+}
+
+type Musician @model {
+  id: ID!
+  posting_title: String!
+  type: String!
+  genre: String
+  city: String!
+  phone: Int!
+  image: String
+}

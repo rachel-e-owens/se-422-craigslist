@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Auth } from 'aws-amplify'
+Auth.currentCredentials()
+  .then(d => console.log('data: ', d))
+  .catch(e => console.log('error: ', e))
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

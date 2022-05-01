@@ -1,0 +1,13 @@
+type CarsTrucks @model {
+  id: ID!
+  section: String!
+  build_year: Int!
+  make_model: String!
+  color: String!
+  type: String!
+  condition: String!
+  price: Int!
+  city: String!
+  phone: Int!
+  image: String
+}

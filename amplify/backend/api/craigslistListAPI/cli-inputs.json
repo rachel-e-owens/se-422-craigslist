@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "craigslistListAPI",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "/Users/rachelowens/Documents/*SPRING_2022/SE_422/craigslist/test_app/amplify-test/amplify/backend/api/craigslistListAPI/schema.graphql",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authcraigslistlistaa3c3ec5"
+    }
+  }
+}

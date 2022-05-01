@@ -1,5 +1,7 @@
 //@ts-check
 import React, { useState } from 'react';
+import { Auth } from 'aws-amplify';
+import { Paper, Button, TextField } from '@material-ui/core';
 import { useNavigate } from 'react-router-dom';
 
 const SignIn = ({ onSignIn }) => {
@@ -8,7 +10,14 @@ const SignIn = ({ onSignIn }) => {
     const navigate = useNavigate();
 
     const signIn = async () => {
-        console.log("need to set up sign in");
+        try {
+            const user = await Auth.signIn(username, password);
+            //history('/');
+            onSignIn();
+            navigate('/home');
+        } catch (error) {
+            console.log('error signing in', error);
+        }
     };
 
     //add Auth.signUp
