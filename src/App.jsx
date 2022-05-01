@@ -43,6 +43,7 @@ import Housing from './sections/Housing';
 import Services from './sections/Services';
 import Jobs from './sections/Jobs';
 import Community from './sections/Community';
+import VerifyRegistration from './components/VerifyRegistration';
 
 Amplify.configure(awsconfig);
 
@@ -126,7 +127,8 @@ function App() {
           <Route path="home" element={<Home />} />
           <Route path="carstrucks" element={<CarsTrucks />} />
           <Route path="forsale" element={<ForSale />} />   
-          <Route path="register" element={<Register />} />   
+          <Route path="register" element={<Register />} /> 
+          <Route path="verifyregistration" element={<VerifyRegistration />} />     
           <Route path="activities" element={<Activities />} />
           <Route path="apthousing" element={<AptHousing />} />    
           <Route path="automotive" element={<Automotive />} />

@@ -15,7 +15,7 @@ const SignIn = ({ onSignIn }) => {
                 password,
             });
             console.log(user);
-            navigate('/signin');
+            navigate('/verifyregistration');
         } catch (error) {
             console.log('error signing up', error);
         }
