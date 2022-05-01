@@ -8,7 +8,7 @@ const SignIn = ({ onSignIn }) => {
     const navigate = useNavigate();
 
     const register = async () => {
-        console.log("need to setup");
+        console.log("need to setup registration");
 
     };
 
